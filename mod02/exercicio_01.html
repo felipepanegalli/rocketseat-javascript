@@ -1,0 +1,31 @@
+<!-- 
+     1º exercício
+     Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+     vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+     aparecer na tela. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercício 01</title>
+  </head>
+  <body>
+    <button onclick="criarCaixa()">Criar caixa</button>
+    <div id="append"></div>
+    <script>
+      var appElement = document.querySelector("#append");
+      function criarCaixa() {
+        var divElement = document.createElement("div");
+        divElement.style.width = "50px";
+        divElement.style.height = "50px";
+        divElement.style.margin = "5px";
+        divElement.style.cssFloat = "left";
+        divElement.style.backgroundColor = "red";
+        appElement.appendChild(divElement);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercício 04</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" name="nome" id="nome" />
+      <button onClick="adicionar()">Adicionar</button>
+      <ul id="ul"></ul>
+    </div>
+
+    <script>
+      const nomes = ["Diego", "Gabriel", "Lucas"];
+      const ulElement = document.getElementById("ul");
+      const inputElement = document.getElementById("nome");
+
+      function addItem(text) {
+        let liElement = document.createElement("li");
+        let textElement = document.createTextNode(text);
+        liElement.appendChild(textElement);
+        ulElement.appendChild(liElement);
+      }
+
+      function adicionar() {
+        addItem(inputElement.value);
+        inputElement.value = "";
+      }
+
+      for (nome of nomes) {
+        addItem(nome);
+      }
+    </script>
+  </body>
+</html>
